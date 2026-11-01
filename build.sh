@@ -34,6 +34,10 @@ done
 cp $CUR_DIR/configs/immortal_h313.config ./.config
 cat "$CUR_DIR/configs/my_packages.txt" >> .config
 make defconfig
+echo "CONFIG_PACKAGE_kmod-usb-net=y" >> .config
+echo "CONFIG_PACKAGE_kmod-usb-net-sr9700=y" >> .config
+echo "CONFIG_PACKAGE_kmod-usb-net-asix=y" >> .config
+echo "CONFIG_PACKAGE_kmod-usb-net-dm9601=y" >> .config
 cp $CUR_DIR/configs/kernel_h313_6.12.config target/linux/sunxi/config-6.12
 rm -f target/linux/sunxi/patches-6.12/910-arm64-dts-allwinner-h5-add-more-cpu-operating-points-.patch
 cp $CUR_DIR/patches/kernel/* target/linux/sunxi/patches-6.12/
